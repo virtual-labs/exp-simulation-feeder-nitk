@@ -1,0 +1,124 @@
+{
+  "version": 2.0,
+  "questions": [
+    {
+      "question": " The transmission voltage in India are _____________",
+      "answers": {
+        "a": "400kV",
+        "b": "220kV",
+        "c": "132kV",
+        "d": "All"
+      },
+      "explanations": {
+        "a": "",
+        "b": "",
+        "c": "",
+        "d": ""
+      },
+      "correctAnswer": "d",
+      "difficulty": ""
+    },
+    {
+      "question": "Transmission network is commonly known as ____________",
+      "answers": {
+        "a": "Pan",
+        "b": "Lock-head",
+        "c": "Grid",
+        "d": "All"
+      },
+      "explanations": {
+        "a": "",
+        "b": "",
+        "c": "",
+        "d": ""
+      },
+      "correctAnswer": "c",
+      "difficulty": ""
+    },
+    {
+      "question": "_________ is one of the best conductors due to its high electrical conductivity and high tensile strength for all type of transmission.",
+      "answers": {
+        "a": "Phosphor brown materials",
+        "b": "Galvanised iron",
+        "c": "Aluminium",
+        "d": "Copper"
+      },
+      "explanations": {
+        "a": "",
+        "b": "",
+        "c": "",
+        "d": ""
+      },
+      "correctAnswer": "d",
+      "difficulty": ""
+    },
+    {
+      "question": "The advantage of using suspension type insulators over pin-type insulators is _________",
+      "answers": {
+        "a": "Cheaper in cost for operating voltage above 50kV",
+        "b": "Flexibility is increased with suspension insulators",
+        "c": "If line insulation needs to be increased, the additional insulators can be easily added to the string",
+        "d": "All"
+      },
+      "explanations": {
+        "a": "",
+        "b": "",
+        "c": "",
+        "d": ""
+      },
+      "correctAnswer": "d",
+      "difficulty": ""
+    },
+    {
+      "question": "Reason for failure of insulator is ________ .",
+      "answers": {
+        "a": "Mechanical stress",
+        "b": "Short circuits",
+        "c": "Flash-over",
+        "d": "All"
+      },
+      "explanations": {
+        "a": "",
+        "b": "",
+        "c": "",
+        "d": ""
+      },
+      "correctAnswer": "d",
+      "difficulty": ""
+    },
+    {
+      "question": "A circuit breaker is an automatically operated electrical switch designed to protect an electrical circuit from damage caused by_________",
+      "answers": {
+        "a": "Overhead",
+        "b": "Short circuit",
+        "c": "Both Overhea and Short circuit",
+        "d": "None"
+      },
+      "explanations": {
+        "a": "",
+        "b": "",
+        "c": "",
+        "d": ""
+      },
+      "correctAnswer": "c",
+      "difficulty": ""
+    },
+    {
+      "question": "The advantage of using oil in OCB as an arc quenching medium is:",
+      "answers": {
+        "a": "It has high dielectric strength",
+        "b": "As a result of decomposition of oil, it has good cooling property",
+        "c": "Both It has high dielectric strength and As a result of decomposition of oil, it has good cooling property",
+        "d": "Highly inflammable"
+      },
+      "explanations": {
+        "a": "",
+        "b": "",
+        "c": "",
+        "d": ""
+      },
+      "correctAnswer": "c",
+      "difficulty": ""
+    }
+  ]
+}
