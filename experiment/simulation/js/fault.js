@@ -1,132 +1,121 @@
-const data = [
-    {
-        id: "meter1",
-        switch: {
-            id: "f1",
-            status: false,
-        },
-    },
-    {
-        id: "meter2",
-        switch: {
-            id: "f2",
-            status: false,
-        },
+let cb6Active = false;
+let cb7Active = false;
+let popUpActive = false;
+const sw1 = document.querySelector(".sw1");
+const sw2 = document.querySelector(".sw2");
+const blueLeft = document.querySelector(".blue--left");
+const blueRight = document.querySelector(".blue--right");
+const parentPopup = document.querySelector(".parentPopup");
+const popup = document.querySelector(".popup");
+const close = document.querySelector(".close");
+const ma1 = document.querySelector(".ma1");
+const mv1 = document.querySelector(".mv1");
+const mp1 = document.querySelector(".mp1");
+const ma2 = document.querySelector(".ma2");
+const mv2 = document.querySelector(".mv2");
+const mp2 = document.querySelector(".mp2");
+const ma3 = document.querySelector(".ma3");
+const mv3 = document.querySelector(".mv3");
+const mp3 = document.querySelector(".mp3");
+const reset = document.querySelector(".reset");
+
+sw1.addEventListener("click", function () {
+  if (!popUpActive) {
+    sw1.classList.toggle("switch-open");
+    cb6Active = !cb6Active;
+    if (cb6Active) {
+      blueLeft.classList.remove("displayy");
+      popUpActive = true;
+      if (popUpActive) {
+        setPopupText();
+      }
+    } else {
+      blueLeft.classList.add("displayy");
+      setPopupText();
     }
-]
-
-
-
-function blinkArrow(id){
-	if(document.getElementById(id).style.visibility == "visible") {
-		document.getElementById(id).style.visibility = "hidden"
-	} else {
-		document.getElementById(id).style.visibility = "visible"
-	}
-}
-let upArrow = setInterval(function(){
-	blinkArrow('upArrow');
-}, 500);
-let leftArrow = setInterval(function(){
-	blinkArrow('leftArrow');
-}, 500);
-let rightArrow = setInterval(function(){
-	blinkArrow('rightArrow');
-}, 500);
-let info = setInterval(function(){
-	blinkArrow('info');
-}, 500);
-
-document.getElementById('arr').style.animation="moveArrow 1s infinite";
-document.getElementById('hand1').style.animation="moveHand 2s infinite";
-document.getElementById('hand2').style.animation="moveHand 2s infinite";
-
-
-updateMeterTable3();
-
-function changeSwitchStatus(ele){
-    data.filter((e)=>{
-        if(e.switch.id == ele.id){
-            e.switch.status = !e.switch.status;
-            changeSwitch(e.switch.id, e.switch.status);
-        }
-    })
-}
-
-function changeSwitch(switchId, status){
-	document.getElementById(switchId).src = status == true ? "./images/switchClose.png" : "./images/switchOpen.png";
-    updateTable(switchId, status)
-}
-
-function updateTable(index, status){
-	if(index == "f1"){
-		document.getElementById("mi1").innerHTML = status == true ? 0 : 45;
-		document.getElementById("mp1").innerHTML = status == true ? 0 : 857.36;
-		document.getElementById("leftBlue").style.opacity = status == true ? 1 : 0;
-        updateMeterTable3();
-        if(status == true){
-            showPopup("CB6 is tripped");
-        }
-	} else if(index == "f2"){
-        document.getElementById("mi2").innerHTML = status == true ? 0 : 30;
-        document.getElementById("mp2").innerHTML = status == true ? 0 : 571.57;
-        document.getElementById("rightBlue").style.opacity = status == true ? 1 : 0;
-        updateMeterTable3();
-        if(status == true){
-            showPopup("CB7 is tripped");
-        }
-	}
-    checkForTrippedState();
-}
-
-
-function showPopup(text){
-    document.getElementById("parentPopup").style.display = "block";
-    document.getElementById("popUpContent").innerHTML = `<span class="close"
-    onclick="closeModal(event);">Trip</span>
-    <p style="text-align:center;padding-top: 20%; font-size: 14px">${text}</p>
-    <p style="text-align:center;"><button style="margin:auto;font-size: 14px; cursor: pointer" onclick="closeModal(event)">OK</button></p>
-    `
-}
-
-function closeModal(ev){
-ev.preventDefault();
-document.getElementById("parentPopup").style.display = "none";
-}
-
-function updateMeterTable3(){
-    let m3 = ((Number(document.getElementById("mi1").innerText)+Number(document.getElementById("mi2").innerText))/3);
-    let p3 = ((Number(document.getElementById("mp1").innerText)+Number(document.getElementById("mp2").innerText))).toFixed(2);
-    document.getElementById("mi3").innerHTML = m3;
-    document.getElementById("mp3").innerHTML = p3 == 0.00 ? 0 : p3;
-}
-
-function resetSwitch(){
-    data.forEach((e)=>{
-            e.switch.status = false;
-            document.getElementById(e.switch.id ).src="./images/switchOpen.png";
-    })
-    document.getElementById("mi1").innerHTML = 45;
-    document.getElementById("mv1").innerHTML = 11;
-    document.getElementById("mp1").innerHTML = 857.36;
-    document.getElementById("mi2").innerHTML = 30;
-    document.getElementById("mv2").innerHTML = 11;
-    document.getElementById("mp2").innerHTML = 571.57;
-    document.getElementById("leftBlue").style.opacity = 0;
-    document.getElementById("rightBlue").style.opacity = 0;
-    updateMeterTable3();
-}
-
-function checkForTrippedState(){
-    if(data[0].switch.status == true) {
-        showPopup("CB6 is Tripped");
+  }
+});
+sw2.addEventListener("click", function () {
+  if (!popUpActive) {
+    sw2.classList.toggle("switch-open");
+    cb7Active = !cb7Active;
+    if (cb7Active) {
+      blueRight.classList.remove("displayy");
+      popUpActive = true;
+      if (popUpActive) {
+        setPopupText();
+      }
+    } else {
+      blueRight.classList.add("displayy");
+      setPopupText();
     }
-    if(data[1].switch.status == true) {
-        showPopup("CB7 is Tripped");
-    }
-    if(data[0].switch.status == true && data[1].switch.status == true ) {
-        showPopup("CB6 & CB7 is Tripped");
-    }
+  }
+});
+
+function setPopupText() {
+  if (cb6Active && cb7Active) {
+    showPopup("CB6 & CB7 are Tripped");
+    ma1.textContent = 0;
+    mp1.textContent = 0;
+    ma2.textContent = 0;
+    mp2.textContent = 0;
+    ma3.textContent = 0;
+    mp3.textContent = 0;
+  } else if (cb6Active) {
+    showPopup("CB6 is Tripped");
+    ma1.textContent = 0;
+    mp1.textContent = 0;
+    ma2.textContent = 30;
+    mp2.textContent = 571.57;
+    ma3.textContent = 10;
+    mp3.textContent = 571.57;
+  } else if (cb7Active) {
+    showPopup("CB7 is Tripped");
+    ma1.textContent = 45;
+    mp1.textContent = 857.36;
+    ma2.textContent = 0;
+    mp2.textContent = 0;
+    ma3.textContent = 15;
+    mp3.textContent = 857.36;
+  } else {
+    ma1.textContent = 45;
+    mp1.textContent = 857.36;
+    ma2.textContent = 30;
+    mp2.textContent = 571.57;
+    ma3.textContent = 25;
+    mp3.textContent = 1428.93;
+  }
 }
 
+close.addEventListener("click", closeModal);
 
+function showPopup(text) {
+  parentPopup.classList.remove("displayy");
+  popup.innerHTML =
+    text + `<br><span class="ok" onclick='closeModal()'>OK</span>`;
+}
+
+function closeModal() {
+  popUpActive = false;
+  parentPopup.classList.add("displayy");
+}
+
+reset.addEventListener("click", resetAll);
+
+function resetAll() {
+  if (!popUpActive) {
+    blueLeft.classList.add("displayy");
+    blueRight.classList.add("displayy");
+    sw1.classList.add("switch-open");
+    sw2.classList.add("switch-open");
+    ma1.textContent = 45;
+    mp1.textContent = 857.36;
+    ma2.textContent = 30;
+    mp2.textContent = 571.57;
+    ma3.textContent = 25;
+    mp3.textContent = 1428.93;
+    popUpActive = false;
+    cb6Active = false;
+    cb7Active = false;
+  }
+}
