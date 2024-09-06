@@ -1,0 +1,11 @@
+
+/home/runner/work/exp-simulation-feeder-nitk/exp-simulation-feeder-nitk/experiment/simulation/js/fault.js
+  12:7  warning  'mv1' is assigned a value but never used  no-unused-vars
+  15:7  warning  'mv2' is assigned a value but never used  no-unused-vars
+  18:7  warning  'mv3' is assigned a value but never used  no-unused-vars
+
+/home/runner/work/exp-simulation-feeder-nitk/exp-simulation-feeder-nitk/experiment/simulation/js/refreshAnim.js
+  1:5  warning  'visibleImagesId' is assigned a value but never used  no-unused-vars
+
+✖ 4 problems (0 errors, 4 warnings)
+

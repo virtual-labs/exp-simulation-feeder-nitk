@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SOLVE -SA</title>
+    <link rel="stylesheet" href="./css/style.css" />
+    <script defer src="./js/fault.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <div class="title">
+        <img src="./images/logo_nitk.png" alt="logo" class="logo" />
+        <h1>Fault in feeder</h1>
+      </div>
+      <div class="main">
+        <div class="dcs">
+          <img src="./images/dcs.png" alt="DCS" class="dcs-setup" />
+          <img src="./images/sw.png" alt="switch" class="sw sw1 switch-open" />
+          <img src="./images/sw.png" alt="switch" class="sw sw2 switch-open" />
+          <img src="./images/hand.png" alt="hand" class="hand hand1" />
+          <img src="./images/hand.png" alt="hand" class="hand hand2" />
+          <div class="reset">Reset</div>
+        </div>
+
+        <div class="setup">
+          <img src="./images/main.png" alt="main" class="main-setup" />
+          <span class="m1 ma1">45</span>
+          <span class="m1 mv1">11</span>
+          <span class="m1 mp1">857.36</span>
+          <span class="m2 ma2">30</span>
+          <span class="m2 mv2">11</span>
+          <span class="m2 mp2">571.57</span>
+          <span class="m3 ma3">25</span>
+          <span class="m3 mv3">33</span>
+          <span class="m3 mp3">1428.93</span>
+          <img
+            src="./images/leftArrow.png"
+            alt=""
+            class="red-arrow red-arrow-m1"
+          />
+          <img
+            src="./images/leftArrow.png"
+            alt=""
+            class="red-arrow red-arrow-m2"
+          />
+          <img
+            src="./images/leftArrow.png"
+            alt=""
+            class="red-arrow red-arrow-m3"
+          />
+          <img
+            src="./images/blue.png"
+            alt="blue"
+            class="blue blue--left displayy"
+          />
+          <img
+            src="./images/blue.png"
+            alt="blue"
+            class="blue blue--right displayy"
+          />
+        </div>
+        <div class="arrow">
+          <img src="./images/arrow.png" alt="arrow" class="ar" />
+        </div>
+      </div>
+      <div class="parentPopup displayy" id="parentPopup">
+        <div class="popup" id="popUpContent">sadasd</div>
+        <span class="close"><span>Trip</span><span>X</span></span>
+      </div>
+      <div class="copyright">
+        <span style="font-weight: 900; font-size: 1.4rem">&copy;&nbsp;</span>
+        <script>
+          document.write(new Date().getFullYear());
+        </script>
+        SOLVE - The Virtual Lab @ NITK Surathkal
+      </div>
+    </div>
+  <script src="../assets/js/iframeResize.js"></script></body>
+</html>
